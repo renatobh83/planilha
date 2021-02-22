@@ -116,6 +116,7 @@ function App() {
         setBtnWin(true);
         setBtnLoss(true);
         setTotalPrejuizo(0);
+        setNivelSoros(4);
         setLucroAcumulado(
           (parseFloat(lucroN3) + parseFloat(lucroAcumulado)).toFixed(2)
         );
