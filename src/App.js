@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { moeda } from "./utils/formatCurrency";
 import InputMask from "react-input-mask";
 import "./App.css";
 import { calculo } from "./utils/bancaCalculos";
@@ -29,7 +30,7 @@ function App() {
   const [btnWin, setBtnWin] = useState(false);
   const [btnLoss, setBtnLoss] = useState(false);
 
-  const [prejuizo, setTotalPrejuizo] = useState(0);
+  const [prejuizo, setTotalPrejuizo] = useState(0.0);
 
   const [lucroAcumulado, setLucroAcumulado] = useState(0);
   const [valorBanca, setValorBanca] = useState(0);
@@ -242,9 +243,9 @@ function App() {
         <h4>
           {nivelSoros} x {totalLoss}
         </h4>
-        <span className="prejuizo">Prejuizo Total {prejuizo}</span>
-        <span className="lucro">Lucro acumulado {lucroAcumulado}</span>
-        {valorBanca !== 0 && <span> Saldo Banca: {valorBanca} </span>}
+        <span className="prejuizo">Prejuizo Total {moeda(prejuizo)}</span>
+        <span className="lucro">Lucro acumulado {moeda(lucroAcumulado)}</span>
+        {valorBanca !== 0 && <span> Saldo Banca: {moeda(valorBanca)} </span>}
       </div>
     </div>
   );
