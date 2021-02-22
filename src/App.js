@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import InputMask from "react-input-mask";
 import "./App.css";
-import banca from "./utils/bancaCalculos";
+import { calculo } from "./utils/bancaCalculos";
 
 function App() {
   const [capital, setCapital] = useState("");
@@ -38,7 +38,7 @@ function App() {
   const handleValues = async (e) => {
     e.preventDefault();
     setValue(true);
-    const valores = await banca.calculo(capital, payout);
+    const valores = await calculo(capital, payout);
 
     setEntrada(valores.entrada);
     setEntradaInicial(valores.entrada);
