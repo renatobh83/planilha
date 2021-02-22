@@ -70,9 +70,8 @@ function App() {
       setBtnWin(true);
       setBtnLoss(true);
       setValorBanca((parseFloat(capital) - parseFloat(prejuizo)).toFixed(2));
-      console.log(lucroAcumulado);
     }
-  }, [totalLoss]);
+  }, [totalLoss]); // eslint-disable-line
 
   const formWinLoss = (e) => {
     e.preventDefault();
