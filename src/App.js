@@ -139,6 +139,7 @@ function App() {
         setNivelSoros(0);
         setTotalLoss(totalLoss + 1);
         setTotalPrejuizo(lossGale1);
+        setNunGale(2);
       } else if (nivelSoros === 0 && totalLoss === 2 && nunGale !== 0) {
         setNivelSoros(0);
         setEntrada(0);
@@ -161,6 +162,7 @@ function App() {
         setTotalLoss(totalLoss + 1);
         setTotalPrejuizo(entradaInicial);
         setLucroAcumulado(0);
+        setNunGale(1);
       } else if (nivelSoros === 2) {
         setEntrada(soros);
         setNivelSoros(1);
@@ -216,7 +218,12 @@ function App() {
         </div>
         <button className="enviar"> Gerar entrada</button>
       </form>
-      <h2> Valor Entrada : {entrada} </h2>
+      <h2> Valor Entrada : {moeda(entrada)} </h2>
+      <h2>
+        {nivelSoros !== 0 && nivelSoros < 4 && `Soros ${nivelSoros}`}
+        {nunGale !== 0 && nivelSoros < 3 && `Matingale ${nunGale}`}
+      </h2>
+
       {value && (
         <form onSubmit={formWinLoss}>
           <button
@@ -224,16 +231,14 @@ function App() {
             onClick={() => setWin(true)}
             disabled={btnWin}
           >
-            {" "}
-            Win{" "}
+            Win
           </button>
           <button
             className="loss"
             onClick={() => setLoss(true)}
             disabled={btnLoss}
           >
-            {" "}
-            Loss{" "}
+            Losss
           </button>
         </form>
       )}
