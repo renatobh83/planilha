@@ -72,7 +72,6 @@ export const calculo = async (capital, payout) => {
     };
     const [
       entradaInicial,
-      lucroGain,
       soros,
       nivel2,
       nivel3,
@@ -84,7 +83,6 @@ export const calculo = async (capital, payout) => {
       lossGale2,
     ] = await Promise.all([
       valorEntrada(),
-      lucro(),
       soros1(),
       soros2(),
       soros3(),
