@@ -92,9 +92,7 @@ function App() {
         setNunGale(0);
         setTotalLoss(0);
         setTotalPrejuizo(0);
-        setLucroAcumulado(
-          (parseFloat(soros) - parseFloat(entradaInicial)).toFixed(2)
-        );
+        setLucroAcumulado(0);
       } else if (nivelSoros === 1) {
         setEntrada(soros2);
         setWin(false);
